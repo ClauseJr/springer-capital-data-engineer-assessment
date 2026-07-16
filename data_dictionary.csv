@@ -1,0 +1,23 @@
+Column Name,Data Type,Description,Example,Notes
+referral_details_id,Integer,Sequential identifier assigned to each referral in the report.,1,Generated during reporting.
+referral_id,String,Unique identifier assigned to each referral.,9331c8f144dad5...,Unique across all referrals.
+referral_source,Text,Original source through which the referral entered the system.,User Sign Up,Business source value.
+referral_source_category,Text,Simplified reporting category for referral source.,Online,"Online, Offline or Lead Campaign."
+referral_at,Datetime (UTC),Date and time when the referral was created.,2024-05-01 05:17 UTC,Stored in UTC.
+referrer_id,String,Identifier of the customer who made the referral.,2c71c5d...,May be blank for Lead referrals.
+referrer_name,Text,Name of the referring customer.,John Doe,Retrieved from user logs.
+referrer_phone_number,Text,Phone number of the referring customer.,+628123456789,Contact information.
+referrer_homeclub,Text,Home club associated with the referrer.,Jakarta Selatan,Reporting field.
+referee_id,String,Identifier of the referred customer.,f1327c9...,May be blank if registration is incomplete.
+referee_name,Text,Name of the referred customer.,Jane Doe,May be unavailable before registration completes.
+referee_phone,Text,Phone number of the referred customer.,+628987654321,Business contact information.
+referral_status,Text,Current referral status.,Berhasil,"Pending, Failed or Successful."
+num_reward_days,Integer,Number of days between referral creation and reward issuance.,3,Blank if no reward has been granted.
+transaction_id,String,Payment transaction linked to the referral.,bc3a22d...,Blank if payment does not exist.
+transaction_status,Text,Current payment status.,PAID,Retrieved from paid transactions.
+transaction_at,Datetime (UTC),Date and time the payment occurred.,2024-05-03 10:20 UTC,Used in business validation.
+transaction_location,Text,Location where payment occurred.,Jakarta,Reporting field.
+transaction_type,Text,Type of payment transaction.,NEW,Used in reward validation.
+updated_at,Datetime (UTC),Last update timestamp of the referral.,2024-05-14 06:17 UTC,Audit field.
+reward_granted_at,Datetime (UTC),Date and time when reward was granted.,2024-05-14 06:17 UTC,Blank if reward not granted.
+is_business_logic_valid,Boolean,Indicates whether the referral satisfies all business validation rules.,TRUE,TRUE = valid reward; FALSE = invalid reward.
